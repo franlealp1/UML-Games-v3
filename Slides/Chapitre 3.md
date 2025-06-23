@@ -225,7 +225,7 @@ public class Platform
 **Inconvénients :**
 - Moins de flexibilité
 - Objets non réutilisables
-- Couplage fort
+- **Couplage fort**!
 
 ---
 

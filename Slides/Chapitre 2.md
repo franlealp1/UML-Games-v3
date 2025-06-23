@@ -224,7 +224,7 @@ Cette décomposition permet de stocker des informations spécifiques à chaque r
 
 Chaque joueur a exactement un système de santé qui gère ses points de vie, et chaque système de santé appartient à exactement un joueur.
 
-**Exemple concret**: Dans **Street Fighter II** (1991), chaque personnage a son propre système de santé avec une barre de vie unique, et chaque barre de vie appartient à un seul personnage.
+**Exemple concret**: Dans **Street Fighter II**, chaque personnage a son propre système de santé avec une barre de vie unique, et chaque barre de vie appartient à un seul personnage.
 
 ```mermaid
 classDiagram
@@ -327,9 +327,8 @@ classDef default fill:#e3f2fd,stroke:#1565c0,stroke-width:2px,color:#0d47a1
 - Implémenter des systèmes de progression
 
 
-### Exigences
 
-## 🎯 Exercice 2 : Système d'Athlétisme et Courses
+## 🎯 Exercice : Système d'Athlétisme et Courses
 
 ### Contexte
 Dans **Wii Sports**, les Miis (personnages du joueur) peuvent participer à plusieurs épreuves d'athlétisme (100m, 200m, saut en longueur, etc.). Un Mii peut participer à plusieurs épreuves, et une épreuve peut avoir plusieurs Miis participants.
@@ -353,9 +352,27 @@ Dans **Wii Sports**, les Miis (personnages du joueur) peuvent participer à plus
   - Consulter les épreuves d'un Mii
   - Consulter les participants d'une épreuve
 
-### Objectif pédagogique
-- Comprendre les associations many-to-many avec classe d'association
-- Gérer les associations réflexives
-- Implémenter des systèmes de qualification
 
+---
+
+## 🎯 Exercice : Système de Potions dans The Witcher
+
+### Contexte
+Dans **The Witcher**, Geralt peut créer des potions en combinant différents ingrédients. Certaines potions peuvent être utilisées comme ingrédients pour créer des potions plus complexes. Par exemple, pour créer une "Potion de Force Supérieure", vous avez besoin de "Potion de Force" + "Essence de Troll". Mais la "Potion de Force" elle-même nécessite "Alcohest" + "Herbe de Griffon".
+
+### Relations à modéliser
+1. **Potion ↔ Potion** : Association réflexive où une potion peut être ingrédient d'autres potions
+2. **Classe d'association** : Stocker les informations spécifiques à chaque relation potion-ingrédient
+
+### Exigences
+- Créez les classes `Potion` et `IngredientPotion`
+- Implémentez l'association réflexive avec classe d'association :
+  - Potion ↔ Potion (many-to-many avec classe d'association)
+- La classe d'association `IngredientPotion` doit contenir :
+  - Quantité nécessaire
+  - Ordre d'ajout dans l'alambic
+- Ajoutez des méthodes pour :
+  - Ajouter un ingrédient à une potion
+  - Obtenir la liste des ingrédients d'une potion
+  - Trouver toutes les potions qui utilisent un ingrédient
 
