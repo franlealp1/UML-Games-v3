@@ -1,6 +1,5 @@
 # Exercices Diagrammes de Classes
 
-## Page 3
 
 ### Exercice 1
 Créez un diagramme de classes simple pour chaque situation :
@@ -24,7 +23,6 @@ Créez un diagramme de classes simple pour chaque situation :
 
 8. Une potion magique de The Witcher est constituée des ingrédients (herbes, pierres, boissons alcoolisées). Les potions magiques peuvent se combiner : une potion magique peut être l'ingrédient d'une autre potion magique
 
-## Page 4
 
 ### Exercice 2
 

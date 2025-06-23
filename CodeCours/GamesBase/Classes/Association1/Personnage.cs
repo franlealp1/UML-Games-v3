@@ -7,6 +7,7 @@ namespace CoursUML
         // propriétés
         private int _hp;
         private string _nom;
+        private List<Arme> _listeArmes;
 
         public int Hp
         {
@@ -20,11 +21,20 @@ namespace CoursUML
             set { _nom = value; }
         }
 
+
+        public List<Arme> ListeArmes
+        {
+            get { return _listeArmes; }
+            set { _listeArmes = value; }
+        }
+
+
         // constructeur
         public Personnage(int hp, string nom)
         {
             Hp = hp;
             Nom = nom;
+            ListeArmes = new List<Arme>();
         }
 
         // méthodes
