@@ -1,0 +1,15 @@
+C:\xampp\htdocs\Games\CodeCours\GamesBase\obj\Debug\net9.0\GamesBase.GeneratedMSBuildEditorConfig.editorconfig
+C:\xampp\htdocs\Games\CodeCours\GamesBase\obj\Debug\net9.0\GamesBase.AssemblyInfoInputs.cache
+C:\xampp\htdocs\Games\CodeCours\GamesBase\obj\Debug\net9.0\GamesBase.AssemblyInfo.cs
+C:\xampp\htdocs\Games\CodeCours\GamesBase\obj\Debug\net9.0\GamesBase.csproj.CoreCompileInputs.cache
+C:\xampp\htdocs\Games\CodeCours\GamesBase\obj\Debug\net9.0\GamesBase.sourcelink.json
+C:\xampp\htdocs\Games\CodeCours\GamesBase\bin\Debug\net9.0\GamesBase.exe
+C:\xampp\htdocs\Games\CodeCours\GamesBase\bin\Debug\net9.0\GamesBase.deps.json
+C:\xampp\htdocs\Games\CodeCours\GamesBase\bin\Debug\net9.0\GamesBase.runtimeconfig.json
+C:\xampp\htdocs\Games\CodeCours\GamesBase\bin\Debug\net9.0\GamesBase.dll
+C:\xampp\htdocs\Games\CodeCours\GamesBase\bin\Debug\net9.0\GamesBase.pdb
+C:\xampp\htdocs\Games\CodeCours\GamesBase\obj\Debug\net9.0\GamesBase.dll
+C:\xampp\htdocs\Games\CodeCours\GamesBase\obj\Debug\net9.0\refint\GamesBase.dll
+C:\xampp\htdocs\Games\CodeCours\GamesBase\obj\Debug\net9.0\GamesBase.pdb
+C:\xampp\htdocs\Games\CodeCours\GamesBase\obj\Debug\net9.0\GamesBase.genruntimeconfig.cache
+C:\xampp\htdocs\Games\CodeCours\GamesBase\obj\Debug\net9.0\ref\GamesBase.dll
