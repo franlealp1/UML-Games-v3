@@ -1,0 +1,214 @@
+
+Exercices Diagramme de Classes
+
+Exercices base sur les relations entre les classes
+
+    1. Implémentez ce diagramme en C#
+
+
+
+
+
+
+Testez votre code dans une main() en créant quelques animaux et en appelant la méthode
+seDeplacer()
+Rajoutez une méthode manger() pour chaque classe dérivée. La méthode est abstraite dans la
+classe de base
+
+    2. Implémentez ce diagramme en C#
+
+(Ignorez la limitation de 3 armes par personnage qui se trouve dans les slides)
+
+
+Créez une méthode addArme dans Personnage pour rajouter des armes (une par une) au
+personnage.   Créez   une   méthode    afficherArmes    pour afficher   toutes   les armes    d'un
+personnage.
+Créez les méthodes équivalentes pour la classe Arme (pour créer l'association dans l'autres
+sens)
+Créez quelques personnages et quelques armes dans une main et testez votre code (ex: un
+personnage    possède   plusieurs   armes,   une même      arme   est   possédée   par   plusieurs
+personnages, etc…)
+
+
+Exercices Diagrammes de Classes                                                            Page 1
+
+
+       3.     Implémentez ce diagramme en C#
+
+
+
+
+Rajoutez un attribut code dans la classe PC (constructeur)
+Créez une liste de PCs, un videoprojecteur et un Local dans une main. Créez une méthode dans
+la classe Local capable d'afficher les PCs qui se trouvent dans un local. Si on affecte null au
+local, les PCs continuent à exister dans la main.
+
+       4.     Implémentez ce diagramme en C#
+
+
+
+
+
+
+Créez les classes et testez votre code dans la main. Créez votre code d'une telle manière que
+les pions et les chevaux seront effacés quand on efface le tableau (en gros il faut créer les
+chevaux et les pions à l'intérieur de la classe Tableau)
+
+
+
+
+Exercices Diagrammes de Classes                                                                                                                                 Page 2
+
+
+Exercice 1
+
+Créez un diagramme de classes simple pour chaque situation :
+
+       1.     Dans le jeu Starcraft 2 les personnages peuvent être des Humans, Protoss et Zergs
+       2.     Dans le jeu Risk, chaque territoire a une armée de soldats et de machines de guerre de
+              plusieurs types
+       3.     Modelez le fait que le menu de votre jeu contienne de boutons. Si on détruit l'objet
+              menu, les boutons sont détruits
+       4.     Kung-fu Master à 5 niveaux. Chaque niveau aura un joueur, plusieurs ennemis et un
+              ennemi final
+       5.     Faites un diagramme pour le jeu tic-tac-toe
+                            -      Joué par deux personnes
+                            -      Joué par une personne et la machine
+              Les joueurs n'existeront plus si on détruit l'objet de la classe  "Jeu"
+       6.     Dans Mortal Kombat, les personnages luttent entre eux
+       7.     Un joueur de Civilization peut construire plusieurs types de bâtiments
+       8.     Une potion magique de The Witcher est constituée des ingrédients (herbes, pierres,
+              boissons          alcoolisées).            Les     potions         magiques            peuvent           se    combiner            :   une      potion
+              magique peut être l'ingrédient d'une autre potion magique
+
+
+
+
+
+
+
+
+
+
+
+Exercices Diagrammes de Classes                                                                                                                               Page 3
+
+
+Exercice 2
+
+
+    1. Créez un diagramme de classes pour représenter les types de véhicules suivants dans
+        GTA: hélicoptères, planeur ultraléger, voitures, bus et camions
+    2. Dans   Thimbleweed    Park un personnage a des       items. Les personnages    peuvent   se
+        donner des items les uns aux autres
+    3. Dans XCOM nous avons plusieurs types de soldats. Considérez les actions communes à
+        tous les types d’unité et les actions qui diffèrent. Comment est qu'on peut éviter la
+        duplicité au moment de créer le code de ces actions ?
+    4. Nous avons des armes dans un jeu : des arbalètes et de rifles. Considérez que ce sont
+        de sous-classes de la classe Arme
+
+
+
+
+
+
+
+
+
+Exercices Diagrammes de Classes                                                            Page 4
+
+
+Exercice 3
+
+
+Considérons deux types de moteur : essence et diesel.
+Dans les moteurs d'essence, le démarrage implique les opérations suivantes :
+       1.     Injecter de l'aire
+       2.     Commencer la carburation
+       3.     Allumer les bougies
+Dans les moteurs diesel, par contre, le démarrage consiste en :
+       1.     Injecter du combustible
+       2.     Injecter de l'aire
+       3.     Compresser le mélange
+Pour arrêter un moteur d'essence on doit arrêter la carburation, tandis que pour arrêter un
+moteur diesel on doit arrêter l'injection.
+
+Réalisez les tâches suivantes :
+       a)     Modélisez (sur papier ou sur un outil de modélisation) les classes qui correspondent
+              aux deux types de moteurs. Utilisez une Interface.
+       b)     Implémentez le modèle en C# (sur papier ou sur un logiciel)
+
+
+
+
+
+
+
+
+
+
+
+
+
+Exercices Diagrammes de Classes                                                                                                                                 Page 5
+
+
+Exercice 4
+
+
+
+Pour chaque situation ci-dessous, proposez un exemple de modélisation selon vos propres
+critères
+
+       1.     Le jeu d'échecs
+
+       2.     L'inventorie d'un personnage dans un jeu
+
+       3.     Un jeu de voitures
+
+       4.     Le Monopoly, considérant qu'on peut jouer contre l'ordinateur
+
+       5.     Le Risk
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Exercices Diagrammes de Classes                                                                                                                                 Page 6
+
+
+Exercice 5
+
+
+Vous voulez réaliser un simulateur de vols commerciaux.
+
+Modelez la partie qui concerne ces informations :
+
+
+    1. Des compagnies aériennes proposent différents vols
+    2. Un vol a un aéroport de départ et un aéroport d’arrivée
+    3. Un vol a un jour et une heure de départ, et un jour et une heure d’arrivée
+    4. Un vol peut comporter des escales dans des aéroports
+    5. Une escale a une heure d’arrivée et une heure de départ
+    6. Une ville peut avoir plusieurs aéroports
+
+
+
+
+
+
+
+
+
+Exercices Diagrammes de Classes                                                            Page 7
+
+

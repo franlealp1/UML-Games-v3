@@ -1,0 +1,14 @@
+c:\xampp\htdocs\UML-Games-2024\obj\Debug\net8.0\UML-Games-2024.GeneratedMSBuildEditorConfig.editorconfig
+c:\xampp\htdocs\UML-Games-2024\obj\Debug\net8.0\UML-Games-2024.AssemblyInfoInputs.cache
+c:\xampp\htdocs\UML-Games-2024\obj\Debug\net8.0\UML-Games-2024.AssemblyInfo.cs
+c:\xampp\htdocs\UML-Games-2024\obj\Debug\net8.0\UML-Games-2024.csproj.CoreCompileInputs.cache
+c:\xampp\htdocs\UML-Games-2024\bin\Debug\net8.0\UML-Games-2024.exe
+c:\xampp\htdocs\UML-Games-2024\bin\Debug\net8.0\UML-Games-2024.deps.json
+c:\xampp\htdocs\UML-Games-2024\bin\Debug\net8.0\UML-Games-2024.runtimeconfig.json
+c:\xampp\htdocs\UML-Games-2024\bin\Debug\net8.0\UML-Games-2024.dll
+c:\xampp\htdocs\UML-Games-2024\bin\Debug\net8.0\UML-Games-2024.pdb
+c:\xampp\htdocs\UML-Games-2024\obj\Debug\net8.0\UML-Games-2024.dll
+c:\xampp\htdocs\UML-Games-2024\obj\Debug\net8.0\refint\UML-Games-2024.dll
+c:\xampp\htdocs\UML-Games-2024\obj\Debug\net8.0\UML-Games-2024.pdb
+c:\xampp\htdocs\UML-Games-2024\obj\Debug\net8.0\UML-Games-2024.genruntimeconfig.cache
+c:\xampp\htdocs\UML-Games-2024\obj\Debug\net8.0\ref\UML-Games-2024.dll
