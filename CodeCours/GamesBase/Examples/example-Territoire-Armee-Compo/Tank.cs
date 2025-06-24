@@ -1,6 +1,6 @@
 using System;
 
-namespace CoursUML
+namespace CoursUML2
 {
     class Tank : Unite
     {
