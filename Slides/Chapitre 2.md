@@ -293,7 +293,6 @@ classDef default fill:#e3f2fd,stroke:#1565c0,stroke-width:2px,color:#0d47a1
 ```mermaid
 classDiagram
     direction LR
-classDef default fill:#e3f2fd,stroke:#1565c0,stroke-width:2px,color:#0d47a1
     class MilitaryUnit {
         -string name
         -string rank
@@ -304,7 +303,7 @@ classDef default fill:#e3f2fd,stroke:#1565c0,stroke-width:2px,color:#0d47a1
         +GetSuperior()
     }
     
-    MilitaryUnit "1" --> "*" MilitaryUnit : commands
+    MilitaryUnit --> MilitaryUnit : 1 commands *
 ```
 
 ### Caractéristiques de ces relations:
