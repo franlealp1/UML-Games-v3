@@ -83,3 +83,25 @@ Dans un jeu multijoueur, les joueurs peuvent rejoindre des guildes. Une guilde p
 - Implémenter des relations hiérarchiques
 
 ---
+
+## 🎯 Exercice 4: Système de Potions dans The Witcher
+
+### Contexte
+Dans **The Witcher**, Geralt peut créer des potions en combinant différents ingrédients. Certaines potions peuvent être utilisées comme ingrédients pour créer des potions plus complexes. Par exemple, pour créer une "Potion de Force Supérieure", vous avez besoin de "Potion de Force" + "Essence de Troll". Mais la "Potion de Force" elle-même nécessite "Alcohest" + "Herbe de Griffon".
+
+### Relations à modéliser
+1. **Potion ↔ Potion** : Association réflexive où une potion peut être ingrédient d'autres potions
+2. **Classe d'association** : Stocker les informations spécifiques à chaque relation potion-ingrédient
+
+### Exigences
+- Créez les classes `Potion` et `IngredientPotion`
+- Implémentez l'association réflexive avec classe d'association :
+  - Potion ↔ Potion (many-to-many avec classe d'association)
+- La classe d'association `IngredientPotion` doit contenir :
+  - Quantité nécessaire
+  - Ordre d'ajout dans l'alambic
+- Ajoutez des méthodes pour :
+  - Ajouter un ingrédient à une potion
+  - Obtenir la liste des ingrédients d'une potion
+  - Trouver toutes les potions qui utilisent un ingrédient
+
