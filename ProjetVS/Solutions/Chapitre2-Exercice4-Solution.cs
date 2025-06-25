@@ -4,9 +4,18 @@ using System.Linq;
 
 namespace CoursUML
 {
+    // ===== IMPLÉMENTATION DU DIAGRAMME UML =====
+    // Ce fichier implémente le diagramme UML du système de potions
+    // avec les relations suivantes :
+    // 1. Hiérarchie d'héritage : Ingredient (classe abstraite) -> Potion et RawIngredient
+    // 2. Relation one-to-many entre Potion et AjoutIngredient
+    // 3. Relation many-to-one entre AjoutIngredient et Ingredient
     /// <summary>
     /// Classe abstraite représentant un ingrédient
     /// </summary>
+    // ===== CLASSE ABSTRAITE DE BASE =====
+    // Cette classe sert de base pour tous les types d'ingrédients
+    // Elle définit les propriétés et méthodes communes à tous les ingrédients
     public abstract class Ingredient
     {
         public string nom { get; set; } = "";
@@ -21,6 +30,9 @@ namespace CoursUML
     /// <summary>
     /// Classe représentant un ingrédient brut
     /// </summary>
+    // ===== CLASSE DÉRIVÉE DE INGREDIENT =====
+    // Cette classe hérite de Ingredient et ajoute des propriétés spécifiques
+    // aux ingrédients bruts comme la source et la rareté
     public class RawIngredient : Ingredient
     {
         public string source { get; set; } = "";
@@ -35,14 +47,32 @@ namespace CoursUML
     /// <summary>
     /// Classe représentant une potion qui hérite d'Ingredient
     /// </summary>
+    // ===== CLASSE DÉRIVÉE DE INGREDIENT AVEC RELATION ONE-TO-MANY =====
+    // Cette classe hérite de Ingredient et ajoute des propriétés spécifiques aux potions
+    // Elle implémente également une relation one-to-many avec AjoutIngredient
+    // Une potion peut contenir plusieurs AjoutIngredient (liste d'ingrédients)
     public class Potion : Ingredient
     {
         public string effet { get; set; } = "";
         public int complexite { get; set; }
+        // ===== IMPLÉMENTATION DE LA RELATION ONE-TO-MANY =====
+        // Une potion contient plusieurs ajouts d'ingrédients
+        // Cette liste stocke tous les ingrédients de la potion avec leurs détails
         private List<AjoutIngredient> ingredients = new List<AjoutIngredient>();
 
+        /// <summary>
+        /// Ajoute un ingrédient à la potion
+        /// </summary>
+        /// <param name="ingredient">Ingrédient à ajouter (peut être une potion ou un ingrédient brut)</param>
+        /// <param name="quantite">Quantité de l'ingrédient</param>
+        /// <param name="ordre">Ordre d'ajout de l'ingrédient</param>
+        // ===== GESTION DE LA RELATION ONE-TO-MANY =====
+        // Cette méthode crée un nouvel AjoutIngredient et l'ajoute à la liste des ingrédients
+        // Elle permet d'ajouter n'importe quel type d'Ingredient (Potion ou RawIngredient)
         public void AddIngredient(Ingredient ingredient, int quantite, int ordre)
         {
+            // ===== CRÉATION DE LA CLASSE D'ASSOCIATION =====
+            // Création d'un nouvel ajout d'ingrédient et ajout à la liste
             ingredients.Add(new AjoutIngredient 
             { 
                 ingredient = ingredient, 
@@ -51,11 +81,23 @@ namespace CoursUML
             });
         }
 
+        /// <summary>
+        /// Retourne la liste des ingrédients de la potion
+        /// </summary>
+        /// <returns>Liste des ajouts d'ingrédients</returns>
+        // ===== ACCÈS À LA RELATION ONE-TO-MANY =====
+        // Cette méthode permet d'accéder à tous les ingrédients de la potion
         public List<AjoutIngredient> GetIngredients()
         {
             return ingredients;
         }
 
+        /// <summary>
+        /// Vérifie si la potion peut être créée
+        /// </summary>
+        /// <returns>True si la potion peut être créée</returns>
+        // ===== UTILISATION DE LA RELATION ONE-TO-MANY =====
+        // Cette méthode utilise la relation pour vérifier si la potion a des ingrédients
         public bool CanBeCreated()
         {
             // Une potion peut être créée si elle a au moins un ingrédient
@@ -66,11 +108,20 @@ namespace CoursUML
     /// <summary>
     /// Classe représentant l'ajout d'un ingrédient dans une potion
     /// </summary>
+    // ===== CLASSE D'ASSOCIATION ENTRE POTION ET INGREDIENT =====
+    // Cette classe représente l'association entre une potion et ses ingrédients
+    // Elle contient les informations spécifiques à l'ajout d'un ingrédient dans une potion
+    // comme la quantité et l'ordre d'ajout
     public class AjoutIngredient
     {
+        // ===== RÉFÉRENCE VERS L'INGRÉDIENT =====
+        // Cette propriété fait référence à l'ingrédient (Potion ou RawIngredient)
         public Ingredient ingredient { get; set; } = null!;
-        public int quantite { get; set; }
-        public int ordreAjout { get; set; }
+        
+        // ===== DONNÉES SPÉCIFIQUES À L'AJOUT =====
+        // Ces propriétés sont spécifiques à l'ajout d'un ingrédient dans une potion
+        public int quantite { get; set; }  // Quantité de l'ingrédient
+        public int ordreAjout { get; set; } // Ordre dans lequel ajouter l'ingrédient
 
         public AjoutIngredient() { }
 
@@ -96,7 +147,8 @@ namespace CoursUML
         {
             Console.WriteLine("=== Système de Potions ===\n");
 
-            // Création d'ingrédients bruts
+            // ===== CRÉATION D'INSTANCES DE RAWINGREDIENT =====
+            // Création d'ingrédients bruts (classe dérivée de Ingredient)
             var herbe = new RawIngredient 
             { 
                 nom = "Herbe médicinale", 
@@ -121,7 +173,8 @@ namespace CoursUML
                 rarete = 8 
             };
 
-            // Création d'une potion simple
+            // ===== CRÉATION D'INSTANCES DE POTION =====
+            // Création d'une potion simple (classe dérivée de Ingredient)
             var potionSoin = new Potion 
             { 
                 nom = "Potion de soin", 
@@ -130,7 +183,8 @@ namespace CoursUML
                 complexite = 2 
             };
 
-            // Ajout d'ingrédients à la potion
+            // ===== CRÉATION DE LA RELATION ONE-TO-MANY =====
+            // Ajout d'ingrédients bruts à la potion (création d'instances d'AjoutIngredient)
             potionSoin.AddIngredient(herbe, 3, 1);
             potionSoin.AddIngredient(champignon, 1, 2);
 
@@ -143,11 +197,15 @@ namespace CoursUML
                 complexite = 5 
             };
 
-            // Ajout d'ingrédients à la potion avancée, y compris une autre potion
+            // ===== DÉMONSTRATION DE L'HÉRITAGE ET DE LA COMPOSITION =====
+            // Ajout d'une potion comme ingrédient dans une autre potion
+            // Ceci est possible car Potion hérite de Ingredient
             potionSoinSupreme.AddIngredient(potionSoin, 1, 1);
             potionSoinSupreme.AddIngredient(ecaille, 2, 2);
 
-            // Affichage des informations
+            // ===== DÉMONSTRATION DU POLYMORPHISME =====
+            // Utilisation de la méthode GetInfo() définie dans la classe abstraite
+            // et potentiellement redéfinie dans les classes dérivées
             Console.WriteLine("Ingrédients bruts:");
             Console.WriteLine(herbe.GetInfo());
             Console.WriteLine(champignon.GetInfo());
@@ -158,7 +216,11 @@ namespace CoursUML
             Console.WriteLine("Effet: " + potionSoin.effet);
             Console.WriteLine("Complexité: " + potionSoin.complexite);
             Console.WriteLine("Peut être créée: " + potionSoin.CanBeCreated());
+            // ===== PARCOURS DE LA RELATION ONE-TO-MANY =====
+            // Affichage des informations de la potion et de ses ingrédients
             Console.WriteLine("Ingrédients:");
+            // ===== ACCÈS AUX OBJETS ASSOCIÉS =====
+            // Parcours de tous les AjoutIngredient associés à la potion
             foreach (var ajout in potionSoin.GetIngredients())
             {
                 Console.WriteLine("- " + ajout.GetDetails());
