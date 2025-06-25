@@ -8,44 +8,65 @@ namespace CoursUML
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("=== Menu de démonstration des exemples UML ===");
-            Console.WriteLine("1. Chapitre 2 - Exemple 1 : Personnage et Véhicule");
-            Console.WriteLine("2. Chapitre 2 - Exemple 2 : Joueur et Scores");
-            Console.WriteLine("3. Chapitre 2 - Exercice 2 : Système d'Athlétisme");
-            Console.WriteLine("4. Chapitre 2 - Exercice 3 : Système de Guildes et Membres");
-            Console.WriteLine("5. Chapitre 2 - Exercice 4 : Système de Potions dans The Witcher");
-            // Console.WriteLine("6. Chapitre 3 - Exemple 1 : ...");
-            // Ajoute ici les autres chapitres et exemples
-            Console.WriteLine("0. Quitter");
-            Console.Write("Choisissez un exemple à lancer : ");
-            var choix = Console.ReadLine();
-
-            switch (choix)
+            bool continuer = true;
+            
+            while (continuer)
             {
-                case "1":
-                    CharacterExemple1.Demo();
-                    break;
-                case "2":
-                    Exemple2.Demo();
-                    break;
-                case "3":
-                    AthlétismeExercice2.Demo();
-                    break;
-                case "4":
-                    GuildesExercice3.Demo();
-                    break;
-                case "5":
-                    PotionsExercice4.Demo();
-                    break;
-                // case "6":
-                //     Chapitre3Exemple1.Demo();
-                //     break;
-                case "0":
-                    Console.WriteLine("Au revoir !");
-                    break;
-                default:
-                    Console.WriteLine("Choix non reconnu.");
-                    break;
+                Console.WriteLine("\n=== Menu de démonstration des exemples UML ===");
+                // Exemples d'abord
+                Console.WriteLine("1. Chapitre 2 - Exemple 1 : Personnage et Véhicule");
+                Console.WriteLine("2. Chapitre 2 - Exemple 2 : Joueur et Scores");
+                Console.WriteLine("3. Chapitre 2 - Exemple 4 : Système de Compétences et Personnages");
+                // Puis exercices
+                Console.WriteLine("4. Chapitre 2 - Exercice 2 : Système d'Athlétisme");
+                Console.WriteLine("5. Chapitre 2 - Exercice 3 : Système de Guildes et Membres");
+                Console.WriteLine("6. Chapitre 2 - Exercice 4 : Système de Potions dans The Witcher");
+                // Console.WriteLine("7. Chapitre 3 - Exemple 1 : ...");
+                // Ajoute ici les autres chapitres et exemples
+                Console.WriteLine("0. Quitter");
+                Console.Write("Choisissez un exemple à lancer : ");
+                var choix = Console.ReadLine();
+
+                switch (choix)
+                {
+                    // Exemples d'abord
+                    case "1":
+                        CharacterExemple1.Demo();
+                        break;
+                    case "2":
+                        Exemple2.Demo();
+                        break;
+                    case "3":
+                        Example4Demo.Demo();
+                        break;
+                    // Puis exercices
+                    case "4":
+                        AthlétismeExercice2.Demo();
+                        break;
+                    case "5":
+                        GuildesExercice3.Demo();
+                        break;
+                    case "6":
+                        PotionsExercice4.Demo();
+                        break;
+                    // case "7":
+                    //     Chapitre3Exemple1.Demo();
+                    //     break;
+                    case "0":
+                        Console.WriteLine("Au revoir !");
+                        continuer = false;
+                        break;
+                    default:
+                        Console.WriteLine("Choix non reconnu.");
+                        break;
+                }
+                
+                if (continuer)
+                {
+                    Console.WriteLine("\nAppuyez sur une touche pour continuer...");
+                    Console.ReadKey();
+                    Console.Clear(); // Efface la console pour une meilleure lisibilité
+                }
             }
         }
     }
