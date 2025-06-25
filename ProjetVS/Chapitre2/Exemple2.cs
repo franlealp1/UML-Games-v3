@@ -6,6 +6,9 @@ public class Player
 {
     private string _name;
     private int _level;
+    // ===== IMPLÉMENTATION DE LA RELATION 1 À PLUSIEURS =====
+    // Un joueur peut avoir plusieurs scores (one-to-many)
+    // Cette liste contient tous les scores du joueur
     private List<Score> _scores;
     public Player(string name, int level)
     {
@@ -15,6 +18,8 @@ public class Player
     }
     public string Name => _name;
     public int Level => _level;
+    // ===== PROPRIÉTÉ POUR ACCÉDER À LA RELATION 1 À PLUSIEURS =====
+    // Cette propriété permet d'accéder à tous les scores du joueur
     public IReadOnlyList<Score> Scores => _scores.AsReadOnly();
     public void SetScore(Score score)
     {

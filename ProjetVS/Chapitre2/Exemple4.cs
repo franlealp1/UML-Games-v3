@@ -12,6 +12,10 @@ namespace CoursUML
         // Champs privés
         private string _name;
         private int _level;
+        // ===== IMPLÉMENTATION DE LA RELATION MANY-TO-MANY AVEC CLASSE D'ASSOCIATION =====
+        // Un Character peut apprendre plusieurs Skill via CharacterSkill
+        // Un Skill peut être appris par plusieurs Character via CharacterSkill
+        // CharacterSkill relie un Character et un Skill, et stocke des infos spécifiques (niveau, expérience)
         private List<CharacterSkill> _characterSkills;
 
         // Propriétés publiques
@@ -27,9 +31,8 @@ namespace CoursUML
             set { _level = value; }
         }
 
-        /// <summary>
-        /// Liste des compétences apprises par le personnage (via CharacterSkill)
-        /// </summary>
+        // ===== PROPRIÉTÉ POUR ACCÉDER À LA RELATION MANY-TO-MANY AVEC CLASSE D'ASSOCIATION =====
+        // Cette propriété permet d'accéder à toutes les compétences apprises par le personnage (via CharacterSkill)
         public List<CharacterSkill> CharacterSkills
         {
             get { return _characterSkills; }
@@ -111,6 +114,8 @@ namespace CoursUML
         private string _name;
         private int _manaCost;
         private string _description;
+        // ===== IMPLÉMENTATION DE LA RELATION MANY-TO-MANY AVEC CLASSE D'ASSOCIATION =====
+        // Cette liste stocke tous les CharacterSkill associés à cette compétence
         private List<CharacterSkill> _characterSkills;
 
         // Propriétés publiques
@@ -129,9 +134,8 @@ namespace CoursUML
             get { return _description; }
             set { _description = value; }
         }
-        /// <summary>
-        /// Liste des CharacterSkill associés à cette compétence
-        /// </summary>
+        // ===== PROPRIÉTÉ POUR ACCÉDER À LA RELATION MANY-TO-MANY AVEC CLASSE D'ASSOCIATION =====
+        // Cette propriété permet d'accéder à tous les CharacterSkill associés à cette compétence
         public List<CharacterSkill> CharacterSkills
         {
             get { return _characterSkills; }
@@ -192,6 +196,8 @@ namespace CoursUML
     class CharacterSkill
     {
         // Champs privés
+        // ===== IMPLÉMENTATION DE LA RELATION MANY-TO-MANY AVEC CLASSE D'ASSOCIATION =====
+        // Référence vers le Character et le Skill associés
         private Character _character;
         private Skill _skill;
         private int _skillLevel;

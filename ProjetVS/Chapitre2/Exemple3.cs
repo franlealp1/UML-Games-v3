@@ -23,8 +23,9 @@ namespace CoursUML
         private int _health;
         
         // ===== IMPLÉMENTATION DE LA RELATION MANY-TO-MANY =====
-        // Cette liste stocke toutes les armes possédées par le joueur
-        // C'est un côté de la relation many-to-many
+        // Un joueur peut posséder plusieurs armes
+        // Une arme peut être utilisée par plusieurs joueurs
+        // Les deux classes contiennent une liste de l'autre type
         private List<Weapon> _weapons;
 
         // Propriétés publiques
@@ -45,7 +46,6 @@ namespace CoursUML
         /// </summary>
         // ===== PROPRIÉTÉ POUR ACCÉDER À LA RELATION MANY-TO-MANY =====
         // Cette propriété permet d'accéder à toutes les armes du joueur
-        // Elle expose un côté de la relation many-to-many
         public List<Weapon> Weapons
         {
             get { return _weapons; }
@@ -198,7 +198,6 @@ namespace CoursUML
         /// </summary>
         // ===== PROPRIÉTÉ POUR ACCÉDER À LA RELATION MANY-TO-MANY =====
         // Cette propriété permet d'accéder à tous les joueurs possédant cette arme
-        // Elle expose l'autre côté de la relation many-to-many
         public List<Player> Players
         {
             get { return _players; }

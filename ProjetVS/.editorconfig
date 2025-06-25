@@ -1,0 +1,8 @@
+# EditorConfig pour désactiver les avertissements de nullabilité
+root = true
+
+[*.cs]
+# Désactiver l'avertissement CS8618 (Non-nullable field must contain a non-null value when exiting constructor)
+dotnet_diagnostic.CS8618.severity = none
+# Désactiver l'avertissement CS8625 (Cannot convert null literal to non-nullable reference type)
+dotnet_diagnostic.CS8625.severity = none

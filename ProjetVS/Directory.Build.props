@@ -1,0 +1,6 @@
+<Project>
+  <PropertyGroup>
+    <!-- Désactiver les avertissements de nullabilité pour tout le projet -->
+    <Nullable>disable</Nullable>
+  </PropertyGroup>
+</Project>

@@ -16,11 +16,15 @@ namespace CoursUML
                 // Exemples d'abord
                 Console.WriteLine("1. Chapitre 2 - Exemple 1 : Personnage et Véhicule");
                 Console.WriteLine("2. Chapitre 2 - Exemple 2 : Joueur et Scores");
-                Console.WriteLine("3. Chapitre 2 - Exemple 4 : Système de Compétences et Personnages");
+                Console.WriteLine("3. Chapitre 2 - Exemple 3 : Joueur et Armes (many-to-many)");
+                Console.WriteLine("4. Chapitre 2 - Exemple 5 : Joueur et Système de Santé (1 à 1)");
+                Console.WriteLine("5. Chapitre 2 - Exemple 6 : Conteneurs imbriqués (relation réflexive)");
+                Console.WriteLine("6. Chapitre 2 - Exemple 7 : Hiérarchie militaire (relation réflexive)");
+                Console.WriteLine("7. Chapitre 2 - Exemple 4 : Système de Compétences et Personnages");
                 // Puis exercices
-                Console.WriteLine("4. Chapitre 2 - Exercice 2 : Système d'Athlétisme");
-                Console.WriteLine("5. Chapitre 2 - Exercice 3 : Système de Guildes et Membres");
-                Console.WriteLine("6. Chapitre 2 - Exercice 4 : Système de Potions dans The Witcher");
+                Console.WriteLine("8. Chapitre 2 - Exercice 2 : Système d'Athlétisme");
+                Console.WriteLine("9. Chapitre 2 - Exercice 3 : Système de Guildes et Membres");
+                Console.WriteLine("10. Chapitre 2 - Exercice 4 : Système de Potions dans The Witcher");
                 // Console.WriteLine("7. Chapitre 3 - Exemple 1 : ...");
                 // Ajoute ici les autres chapitres et exemples
                 Console.WriteLine("0. Quitter");
@@ -37,16 +41,28 @@ namespace CoursUML
                         Exemple2.Demo();
                         break;
                     case "3":
+                        Example3Demo.Demo();
+                        break;
+                    case "4":
+                        Example5Demo.Demo();
+                        break;
+                    case "5":
+                        Example6Demo.Demo();
+                        break;
+                    case "6":
+                        Example7Demo.Demo();
+                        break;
+                    case "7":
                         Example4Demo.Demo();
                         break;
                     // Puis exercices
-                    case "4":
+                    case "8":
                         AthlétismeExercice2.Demo();
                         break;
-                    case "5":
+                    case "9":
                         GuildesExercice3.Demo();
                         break;
-                    case "6":
+                    case "10":
                         PotionsExercice4.Demo();
                         break;
                     // case "7":
