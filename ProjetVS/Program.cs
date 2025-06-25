@@ -28,6 +28,7 @@ namespace CoursUML
                 Console.WriteLine("12. Chapitre 2 - Exercice 2 : Système d'Athlétisme");
                 Console.WriteLine("13. Chapitre 2 - Exercice 3 : Système de Guildes et Membres");
                 Console.WriteLine("14. Chapitre 2 - Exercice 4 : Système de Potions dans The Witcher");
+                Console.WriteLine("15. Chapitre 3 - Exercice 1 : Système de Gestion d'Aéroline");
                 // Console.WriteLine("7. Chapitre 3 - Exemple 1 : ...");
                 // Ajoute ici les autres chapitres et exemples
                 Console.WriteLine("0. Quitter");
@@ -80,9 +81,9 @@ namespace CoursUML
                     case "14":
                         CoursUML.PotionsExercice4.Demo();
                         break;
-                    // case "7":
-                    //     Chapitre3Exemple1.Demo();
-                    //     break;
+                    case "15":
+                        CoursUML.Chapitre3.Exercice1.AerolineDemo.Demo();
+                        break;
                     case "0":
                         Console.WriteLine("Au revoir !");
                         continuer = false;
