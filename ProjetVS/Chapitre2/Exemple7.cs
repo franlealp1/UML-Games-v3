@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace UMLGames.Examples.Chapitre2
+namespace UMLGames.Examples.Chapitre2.Exemple7
 {
     /// <summary>
     /// Classe représentant une unité militaire pouvant commander d'autres unités (relation hiérarchique réflexive)

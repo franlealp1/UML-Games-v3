@@ -1,5 +1,4 @@
 using System;
-using UMLGames.Examples.Chapitre2; // Namespace trouvé dans Exemple1.cs
 using CoursUML; // Namespace pour les solutions des exercices
 
 namespace CoursUML
@@ -21,10 +20,14 @@ namespace CoursUML
                 Console.WriteLine("5. Chapitre 2 - Exemple 6 : Conteneurs imbriqués (relation réflexive)");
                 Console.WriteLine("6. Chapitre 2 - Exemple 7 : Hiérarchie militaire (relation réflexive)");
                 Console.WriteLine("7. Chapitre 2 - Exemple 4 : Système de Compétences et Personnages");
+                Console.WriteLine("8. Chapitre 3 - Exemple 1 : Inventaire et Objets (Agrégation)");
+                Console.WriteLine("9. Chapitre 3 - Exemple 2 : Niveau de Jeu et Plateformes (Composition)");
+                Console.WriteLine("10. Chapitre 5 - Exemple 1 : Interfaces - Gobelin Multi-Rôles");
+                Console.WriteLine("11. Chapitre 5 - Exemple 2 : Héritage + Interfaces - NPCs Avancés");
                 // Puis exercices
-                Console.WriteLine("8. Chapitre 2 - Exercice 2 : Système d'Athlétisme");
-                Console.WriteLine("9. Chapitre 2 - Exercice 3 : Système de Guildes et Membres");
-                Console.WriteLine("10. Chapitre 2 - Exercice 4 : Système de Potions dans The Witcher");
+                Console.WriteLine("12. Chapitre 2 - Exercice 2 : Système d'Athlétisme");
+                Console.WriteLine("13. Chapitre 2 - Exercice 3 : Système de Guildes et Membres");
+                Console.WriteLine("14. Chapitre 2 - Exercice 4 : Système de Potions dans The Witcher");
                 // Console.WriteLine("7. Chapitre 3 - Exemple 1 : ...");
                 // Ajoute ici les autres chapitres et exemples
                 Console.WriteLine("0. Quitter");
@@ -35,35 +38,47 @@ namespace CoursUML
                 {
                     // Exemples d'abord
                     case "1":
-                        CharacterExemple1.Demo();
+                        UMLGames.Examples.Chapitre2.Exemple1.CharacterExemple1.Demo();
                         break;
                     case "2":
-                        Exemple2.Demo();
+                        UMLGames.Examples.Chapitre2.Exemple2.Exemple2.Demo();
                         break;
                     case "3":
-                        Example3Demo.Demo();
+                        UMLGames.Examples.Chapitre2.Exemple3.Example3Demo.Demo();
                         break;
                     case "4":
-                        Example5Demo.Demo();
+                        UMLGames.Examples.Chapitre2.Exemple5.Example5Demo.Demo();
                         break;
                     case "5":
-                        Example6Demo.Demo();
+                        UMLGames.Examples.Chapitre2.Exemple6.Example6Demo.Demo();
                         break;
                     case "6":
-                        Example7Demo.Demo();
+                        UMLGames.Examples.Chapitre2.Exemple7.Example7Demo.Demo();
                         break;
                     case "7":
-                        Example4Demo.Demo();
+                        UMLGames.Examples.Chapitre2.Exemple4.Example4Demo.Demo();
                         break;
-                    // Puis exercices
                     case "8":
-                        AthlétismeExercice2.Demo();
+                        UMLGames.Examples.Chapitre3.Exemple1.Example1Demo.Demo();
                         break;
                     case "9":
-                        GuildesExercice3.Demo();
+                        UMLGames.Examples.Chapitre3.Exemple2.Example2Demo.Demo();
                         break;
                     case "10":
-                        PotionsExercice4.Demo();
+                        UMLGames.Examples.Chapitre5.Exemple1.Example1Demo.Demo();
+                        break;
+                    case "11":
+                        UMLGames.Examples.Chapitre5.Exemple2.Example2Demo.Demo();
+                        break;
+                    // Puis exercices
+                    case "12":
+                        CoursUML.AthlétismeExercice2.Demo();
+                        break;
+                    case "13":
+                        CoursUML.GuildesExercice3.Demo();
+                        break;
+                    case "14":
+                        CoursUML.PotionsExercice4.Demo();
                         break;
                     // case "7":
                     //     Chapitre3Exemple1.Demo();

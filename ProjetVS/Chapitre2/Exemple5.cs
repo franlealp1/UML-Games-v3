@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace UMLGames.Examples.Chapitre2
+namespace UMLGames.Examples.Chapitre2.Exemple5
 {
     /// <summary>
     /// Classe représentant un joueur avec un système de santé unique

@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace UMLGames.Examples.Chapitre3
+namespace UMLGames.Examples.Chapitre3.Exemple1
 {
     /// <summary>
     /// Classe représentant un inventaire qui peut contenir des objets (relation d'agrégation)

@@ -1,0 +1,1 @@
+Les exemples de ce chapitre concernent une seule classe, nous n'avons pas vraiment besoin de montrer comment les coder si vous suivez les notes.

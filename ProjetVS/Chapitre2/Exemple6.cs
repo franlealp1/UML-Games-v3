@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace UMLGames.Examples.Chapitre2
+namespace UMLGames.Examples.Chapitre2.Exemple6
 {
     /// <summary>
     /// Classe représentant un conteneur pouvant contenir d'autres conteneurs ou des objets

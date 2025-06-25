@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace UMLGames.Examples.Chapitre2
+namespace UMLGames.Examples.Chapitre2.Exemple1
 {
     /// <summary>
     /// Classe représentant un personnage dans le jeu

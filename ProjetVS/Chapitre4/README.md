@@ -1,0 +1,1 @@
+Les exemples de ce chapitre montrent directement les limitations de l'héritages (voir les notes)

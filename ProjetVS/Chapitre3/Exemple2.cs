@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace UMLGames.Examples.Chapitre3
+namespace UMLGames.Examples.Chapitre3.Exemple2
 {
     /// <summary>
     /// Classe représentant un niveau de jeu qui contient des plateformes (relation de composition)

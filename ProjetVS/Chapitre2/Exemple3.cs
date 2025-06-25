@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace CoursUML
+namespace UMLGames.Examples.Chapitre2.Exemple3
 {
     // ===== IMPLÉMENTATION DU DIAGRAMME UML =====
     // Ce fichier implémente une relation many-to-many entre Player et Weapon
