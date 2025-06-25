@@ -156,7 +156,7 @@ classDef default fill:#e3f2fd,stroke:#1565c0,stroke-width:2px,color:#0d47a1
 
 **Exemple :** Un personnage peut apprendre plusieurs compétences, et une compétence peut être apprise par plusieurs personnages. **La relation stocke des informations spécifiques comme le niveau de maîtrise**.
 
-**Jeu de référence :** Final Fantasy VII - Los personajes pueden aprender diferentes habilidades (magia, técnicas especiales) y cada habilidad tiene un nivel de maestría específico para cada personaje.
+**Jeu de référence :** Final Fantasy VII - Les personnages peuvent apprendre différentes compétences (magie, techniques spéciales) et chaque compétence possède un niveau de maîtrise spécifique pour chaque personnage.
 
 La première idée qui nous vient à l'esprit est de représenter ainsi :
 ```mermaid
@@ -184,7 +184,7 @@ classDef default fill:#e3f2fd,stroke:#1565c0,stroke-width:2px,color:#0d47a1
 
 Mais imaginons que nous devons stocker le niveau que le personnage a acquis pour cette compétence (ex: niveau 3 en magie de feu). Dans quelle classe cette propriété irait-elle ? **Elle n'appartient à aucune des deux classes qui font partie de l'association**. **Elle n'existe que comme propriété du lien (association) entre un Personnage concret et une compétence complète**
 
-
+(le code de Exemple4.cs correspond au diagramme ci-dessous)
 
 ```mermaid
 classDiagram

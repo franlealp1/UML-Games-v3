@@ -1,5 +1,8 @@
 # 🎮 Chapitre 3. Relations entre Classes : Agrégation et Composition
 
+> [!NOTE]
+> **Attention :** En C# (et dans la plupart des langages à garbage collector), la composition et l'agrégation sont principalement conceptuelles. La destruction automatique des objets contenus (composition stricte) n'est pas garantie par le langage : seuls les liens sont supprimés, les objets continuent d'exister tant qu'ils sont référencés ailleurs. Il faut donc raisonner en termes de cycle de vie logique et non physique.
+
 Ce chapitre se concentre sur les **relations de contenu** entre classes : l'agrégation et la composition. Ces relations représentent des liens de **propriété** où une classe contient d'autres classes.
 
 ## 🔗 Agrégation (Aggregation)
@@ -12,7 +15,7 @@ L'**agrégation** représente une relation "a un" où une classe contient d'autr
 - **Relation** : "a un" ou "contient"
 - **Cardinalité** : Container "1" → Contenu "*"
 
-### Exemple : Inventaire et Objets
+### Exemple 1: Inventaire et Objets
 
 **Contexte** : Dans **Minecraft**, un inventaire contient des objets. Si l'inventaire est supprimé, les objets peuvent être transférés vers un autre inventaire ou tomber au sol, mais ils continuent d'exister.
 
@@ -40,31 +43,7 @@ classDef default fill:#e3f2fd,stroke:#1565c0,stroke-width:2px,color:#0d47a1
     Inventory "1" o-- "*" Item : contains
 ```
 
-### Implémentation : Structures de données
 
-```csharp
-public class Inventory
-{
-    // ... autres attributs ...
-    private List<Item> items;  // ← Référence vers liste externe (agrégation)
-    
-    public Inventory(List<Item> initialItems)
-    {
-        this.items = initialItems;  // ← Injection de dépendance
-    }
-    
-    public void SetItems(List<Item> newItems)
-    {
-        this.items = newItems;  // ← Changement de référence
-    }
-}
-
-public class Item
-{
-    // ... autres attributs ...
-    // Pas de référence vers Inventory (indépendance)
-}
-```
 
 ### Caractéristiques de l'Agrégation
 
@@ -85,7 +64,7 @@ La **composition** représente une relation "est composé de" où une classe con
 - **Relation** : "est composé de" ou "contient exclusivement"
 - **Cardinalité** : Container "1" → Contenu "*"
 
-### Exemple : Niveau de Jeu et Plateformes
+### Exemple 2: Niveau de Jeu et Plateformes
 
 **Contexte** : Dans **Super Mario Bros**, un niveau de jeu contient des plateformes. Si le niveau est supprimé, toutes les plateformes sont également supprimées car elles n'ont pas de sens sans le niveau.
 
@@ -114,31 +93,6 @@ classDef default fill:#e3f2fd,stroke:#1565c0,stroke-width:2px,color:#0d47a1
     GameLevel "1" *-- "*" Platform : contains
 ```
 
-### Implémentation : Structures de données
-
-```csharp
-public class GameLevel
-{
-    // ... autres attributs ...
-    private List<Platform> platforms;  // ← Liste créée et gérée par le container
-    
-    public GameLevel()
-    {
-        this.platforms = new List<Platform>();  // ← Création interne
-    }
-    
-    public void AddPlatform(Platform platform)
-    {
-        this.platforms.Add(platform);  // ← Gestion du cycle de vie
-    }
-}
-
-public class Platform
-{
-    // ... autres attributs ...
-    // Pas de référence vers GameLevel (dépendance forte)
-}
-```
 
 ### Caractéristiques de la Composition
 
