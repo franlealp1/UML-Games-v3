@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "DcVfkxls9+o=",
+  "dgSpecHash": "jhhU4m0CLTU=",
   "success": true,
   "projectFilePath": "/home/bender/Documents/Trabajo/Interface3/UML-Games-v3/CodeCours/GamesBase/GamesBase.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "/home/bender/.nuget/packages/defaultdocumentation/1.1.1/defaultdocumentation.1.1.1.nupkg.sha512"
+  ],
   "logs": []
 }
