@@ -119,7 +119,7 @@ classDef default fill:#e3f2fd,stroke:#1565c0,stroke-width:2px,color:#0d47a1
 
 ## Associations plusieurs à plusieurs sans attributs
 
-### Exemple: Joueurs et Armes
+### Exemple 3: Joueurs et Armes
 
 Dans un jeu multijoueur, plusieurs joueurs peuvent utiliser la même arme (par exemple, une arme ramassée au sol), et un joueur peut utiliser plusieurs armes différentes au cours du jeu.
 
@@ -151,6 +151,9 @@ classDef default fill:#e3f2fd,stroke:#1565c0,stroke-width:2px,color:#0d47a1
 
 ## Associations plusieurs à plusieurs avec attributs
 
+
+### Exemple 4: Character et Skill
+
 **Exemple :** Un personnage peut apprendre plusieurs compétences, et une compétence peut être apprise par plusieurs personnages. **La relation stocke des informations spécifiques comme le niveau de maîtrise**.
 
 **Jeu de référence :** Final Fantasy VII - Los personajes pueden aprender diferentes habilidades (magia, técnicas especiales) y cada habilidad tiene un nivel de maestría específico para cada personaje.
@@ -180,6 +183,7 @@ classDef default fill:#e3f2fd,stroke:#1565c0,stroke-width:2px,color:#0d47a1
 ```
 
 Mais imaginons que nous devons stocker le niveau que le personnage a acquis pour cette compétence (ex: niveau 3 en magie de feu). Dans quelle classe cette propriété irait-elle ? **Elle n'appartient à aucune des deux classes qui font partie de l'association**. **Elle n'existe que comme propriété du lien (association) entre un Personnage concret et une compétence complète**
+
 
 
 ```mermaid
@@ -220,7 +224,7 @@ Cette décomposition permet de stocker des informations spécifiques à chaque r
 ## 🔗 Associations Un à Un
 
 
-### Exemple: Joueur et Système de Santé
+### Exemple 5: Joueur et Système de Santé
 
 Chaque joueur a exactement un système de santé qui gère ses points de vie, et chaque système de santé appartient à exactement un joueur.
 
@@ -262,7 +266,7 @@ Cette relation 1 à 1 permet une séparation claire des responsabilités : le `P
 
 ## 🔗 Associations Réflexives (Auto-associations)
 
-### Exemple 1: Conteneurs Anidés dans l'Inventaire
+### Exemple 6: Conteneurs Anidés dans l'Inventaire
 
 Une **association réflexive** est une relation d'une classe avec elle-même. Elle permet de modéliser des structures hiérarchiques où les instances d'une même classe peuvent être liées entre elles.
 
@@ -283,10 +287,10 @@ classDef default fill:#e3f2fd,stroke:#1565c0,stroke-width:2px,color:#0d47a1
         +GetSubContainers()
     }
     
-    Container "1" --> "*" Container : contains
+    Container  -->  Container : 1 contains *   
 ```
 
-### Exemple 2: Hiérarchie Militaire
+### Exemple 7: Hiérarchie Militaire
 
 **Exemple concret**: Dans un jeu de stratégie militaire, les unités militaires peuvent avoir une hiérarchie de commandement. Un officier peut commander plusieurs subordonnés, et chaque subordonné a un seul supérieur direct.
 
@@ -327,7 +331,7 @@ classDiagram
 
 
 
-## 🎯 Exercice : Système d'Athlétisme et Courses
+## 🎯 Exercice 1: Système d'Athlétisme et Courses
 
 ### Contexte
 Dans **Wii Sports**, les Miis (personnages du joueur) peuvent participer à plusieurs épreuves d'athlétisme (100m, 200m, saut en longueur, etc.). Un Mii peut participer à plusieurs épreuves, et une épreuve peut avoir plusieurs Miis participants.
@@ -354,7 +358,7 @@ Dans **Wii Sports**, les Miis (personnages du joueur) peuvent participer à plus
 
 ---
 
-## 🎯 Exercice : Système de Potions dans The Witcher
+## 🎯 Exercice 2: Système de Potions dans The Witcher
 
 ### Contexte
 Dans **The Witcher**, Geralt peut créer des potions en combinant différents ingrédients. Certaines potions peuvent être utilisées comme ingrédients pour créer des potions plus complexes. Par exemple, pour créer une "Potion de Force Supérieure", vous avez besoin de "Potion de Force" + "Essence de Troll". Mais la "Potion de Force" elle-même nécessite "Alcohest" + "Herbe de Griffon".
