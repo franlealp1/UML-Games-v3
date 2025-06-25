@@ -1,7 +1,7 @@
 # 🎮 Exercices - Chapitres 3, 4 et 5
 
 
-## 🎯 Exercice Chapitre 3 : Agrégation et Composition
+## 🎯 Exercice 1: Agrégation et Composition
 
 ### Contexte : Système de Gestion d'Aéroline (Style Airline Manager)
 
@@ -54,7 +54,7 @@ Créez un diagramme UML montrant toutes les relations avec :
 
 
 
-## 🎯 Exercice Chapitre 4 : Héritage et Polymorphisme
+## 🎯 Exercice 2 : Héritage et Polymorphisme
 
 ### Contexte : Système de Véhicules de Course
 
@@ -126,7 +126,7 @@ public class Course
 
 ---
 
-## 🎯 Exercice Chapitre 5 : Interfaces et Rôles Multiples
+## 🎯 Exercice 3 : Interfaces et Rôles Multiples
 
 ### Contexte : Système de Personnages RPG Avancé
 
@@ -221,87 +221,3 @@ public class GestionnaireRoles
 3. **Interactions entre rôles** : Comment gérer les synergies entre rôles ?
 
 ---
-
-## 🌟 Exercice Global : Système de Jeu Complet
-
-### Contexte : Jeu de Stratégie "Empire Builder"
-
-Vous développez un jeu de stratégie où les joueurs construisent des empires, gèrent des ressources, et combattent des ennemis.
-
-### 🏛️ Système Complet à Modéliser
-
-#### A. Gestion des Territoires (Agrégation/Composition)
-- **Empire** : Contient des territoires et des ressources
-- **Territoire** : Contient des bâtiments et des unités
-- **Bâtiment** : Peut être une mine, une ferme, une caserne
-- **Ressource** : Or, nourriture, bois, pierre
-
-#### B. Hiérarchie des Unités (Héritage/Polymorphisme)
-- **Unité** : Classe abstraite pour toutes les unités
-- **Unité de Combat** : Guerrier, Archer, Cavalier
-- **Unité de Production** : Ouvrier, Fermier, Mineur
-- **Unité Spéciale** : Mage, Ingénieur, Diplomate
-
-#### C. Rôles Multiples (Interfaces)
-- **Combattant** : Peut attaquer et se défendre
-- **Producteur** : Peut produire des ressources
-- **Constructeur** : Peut construire des bâtiments
-- **Explorateur** : Peut explorer de nouveaux territoires
-- **Diplomate** : Peut négocier avec d'autres empires
-
-### 📝 Tâches Complètes
-
-#### 1. Diagramme UML Global
-Créez un diagramme UML complet montrant :
-- Toutes les relations d'agrégation et composition
-- Toute la hiérarchie d'héritage
-- Toutes les interfaces et leurs implémentations
-- Les cardinalités correctes
-
-#### 2. Implémentation C# Complète
-```csharp
-// Exemple de structure attendue
-public abstract class Unite : ICombattant, IProducteur, IConstructeur
-{
-    protected string nom;
-    protected int niveau;
-    protected Position position;
-    
-    // Implémentation des interfaces
-}
-
-public class GuerrierOuvrier : Unite
-{
-    // Hérite de Unite, implémente les interfaces
-    // Peut combattre ET produire
-}
-
-public class Empire
-{
-    private List<Territoire> territoires;  // Agrégation ou Composition ?
-    private List<Ressource> ressources;    // Agrégation ou Composition ?
-    
-    // Méthodes de gestion
-}
-```
-
-#### 3. Système de Jeu
-Implémentez un système de jeu qui utilise tout :
-
-```csharp
-public class Jeu
-{
-    private List<Empire> empires;
-    
-    public void TourDeJeu()
-    {
-        foreach (Empire empire in empires)
-        {
-            // Gestion des territoires
-            // Gestion des unités
-            // Gestion des rôles
-        }
-    }
-}
-```
-

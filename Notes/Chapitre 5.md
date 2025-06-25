@@ -136,7 +136,7 @@ classDef default fill:#e8f5e8,stroke:#2e7d32,stroke-width:2px,color:#1b5e20
 ### 🎯 Qu'est-ce qu'une Interface ?
 Une **interface** définit un **contrat** (méthodes et propriétés) qu'une classe doit respecter, **sans fournir d'implémentation**. Elle résout le problème de l'héritage multiple.
 
-### Solution 1: ✅ Avec Interfaces - Diagramme UML
+### Exemple 1: solution ✅ Avec Interfaces - Diagramme UML
 
 ```mermaid
 classDiagram
@@ -335,7 +335,7 @@ public class Orc : IEnnemi
 ### 🎯 Approche Hybride
 Combiner les **classes abstraites** (pour le comportement commun) avec les **interfaces** (pour les contrats multiples).
 
-### ✅ Solution Complète - Diagramme UML
+### Exemple 2: solution ✅ Avec Interfaces et classes abstraites
 
 ```mermaid
 classDiagram
