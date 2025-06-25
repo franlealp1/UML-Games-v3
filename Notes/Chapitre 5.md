@@ -136,7 +136,7 @@ classDef default fill:#e8f5e8,stroke:#2e7d32,stroke-width:2px,color:#1b5e20
 ### 🎯 Qu'est-ce qu'une Interface ?
 Une **interface** définit un **contrat** (méthodes et propriétés) qu'une classe doit respecter, **sans fournir d'implémentation**. Elle résout le problème de l'héritage multiple.
 
-### ✅ Avec Interfaces - Diagramme UML
+### Solution 1: ✅ Avec Interfaces - Diagramme UML
 
 ```mermaid
 classDiagram

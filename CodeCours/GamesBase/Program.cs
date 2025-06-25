@@ -9,7 +9,7 @@ namespace CoursUML
         {
             Console.WriteLine("=== Menu de démonstration des exemples UML ===");
             Console.WriteLine("1. Chapitre 2 - Exemple 1 : Personnage et Véhicule");
-            // Console.WriteLine("2. Chapitre 2 - Exemple 2 : ...");
+            Console.WriteLine("2. Chapitre 2 - Exemple 2 : Joueur et Scores");
             // Console.WriteLine("3. Chapitre 3 - Exemple 1 : ...");
             // Ajoute ici les autres chapitres et exemples
             Console.WriteLine("0. Quitter");
@@ -21,9 +21,9 @@ namespace CoursUML
                 case "1":
                     CharacterExemple1.Demo();
                     break;
-                // case "2":
-                //     Exemple2.Demo();
-                //     break;
+                case "2":
+                    Exemple2.Demo();
+                    break;
                 // case "3":
                 //     Chapitre3Exemple1.Demo();
                 //     break;
