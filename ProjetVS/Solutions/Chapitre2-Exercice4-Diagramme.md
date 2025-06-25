@@ -1,93 +1,88 @@
-# 🎮 Diagramme UML - Système de Potions dans The Witcher
+# 🎮 Diagramme UML - Système de Potions
 
 ## 🔗 Diagramme de Classes UML
 
+**Attention**: c'est difficile (sinon impossible de fois) d'établir proprement le layout avec Mermaid. Observez que la classe AjoutIngredient se trouve au sommet de la hiérarchie, mais on n'hérite pas d'elle! Le diagramme est correct mais le layout pourrait être plus clair.
+
 ```mermaid
 classDiagram
-    %% Classe de base Ingredient
+    %% Classe abstraite Ingredient
     class Ingredient {
-        +string Name
-        +string Description
+        <<abstract>>
+        +nom: string
+        +description: string
+        +GetInfo(): string
     }
     
-    %% Classe Potion qui hérite d'Ingredient (peut être utilisée comme ingrédient)
+    %% Classe AjoutIngredient (IngredientPotion dans l'énoncé)
+    class AjoutIngredient {
+        +quantite: int
+        +ordreAjout: int
+        +GetDetails(): string
+    }
+    
+    %% Classe Potion qui hérite d'Ingredient
     class Potion {
-        +int ComplexityLevel
-        +string Effect
-        +AddIngredient(ingredient, quantity, order)
-        +GetIngredients()
-        +CanBeCreated()
+        +nom: string
+        +effet: string
+        +complexite: int
+        +AddIngredient(ingredient, quantite, ordre): void
+        +GetIngredients(): List<AjoutIngredient>
+        +CanBeCreated(): bool
     }
     
-    %% Classe BaseIngredient qui hérite d'Ingredient
-    class BaseIngredient {
-        +string Source
-        +int Rarity
+    %% Classe RawIngredient qui hérite d'Ingredient
+    class RawIngredient {
+        +source: string
+        +rarete: int
+        +GetSource(): string
     }
 
-    %% Classe d'association IngredientRecipe
-    class IngredientRecipe {
-        +int Quantity
-        +int AddOrder
-    }
-
-    %% Relations d'héritage
-    Ingredient <|-- Potion
-    Ingredient <|-- BaseIngredient
-    
-    %% RELATION MANY-TO-MANY AVEC CLASSE D'ASSOCIATION
-    Potion "*" -- "*" Ingredient
-    IngredientRecipe -- Potion
-    IngredientRecipe -- Ingredient
+    %% Relations
+    AjoutIngredient "*" -- "1" Ingredient : contient
+    AjoutIngredient "1..*" -- "1" Potion : correspond
+    Ingredient <|-- Potion : Extends
+    Ingredient <|-- RawIngredient : Extends
 ```
 
 ## 📊 Explication des Relations
 
-### 🔄 **Hiérarchie d'héritage : Ingredient → Potion/BaseIngredient**
+### 🔄 **Hiérarchie d'héritage : Ingredient → Potion/RawIngredient**
 
-**Classe de base `Ingredient` :**
-- Contient les propriétés communes à tous les ingrédients : nom et description
-- Sert de classe abstraite pour les différents types d'ingrédients
+**Classe abstraite `Ingredient` :**
+- Classe de base abstraite pour tous les types d'ingrédients
+- Contient les propriétés et méthodes communes à tous les ingrédients
 
 **Classes dérivées :**
-- **`Potion`** : Représente une potion qui peut être consommée et contenir d'autres ingrédients
-- **`BaseIngredient`** : Représente un ingrédient de base comme "Alcohest", "Herbe de Griffon", etc.
+- **`Potion`** : Représente une potion qui peut être consommée
+- **`RawIngredient`** : Représente un ingrédient brut avec une source spécifique
 
-### 🔄 **Relation Many-to-Many avec Classe d'Association : Potion ↔ Ingredient**
+### 🔄 **Relation entre AjoutIngredient, Potion et Ingredient**
 
 **Cardinalité :** 
-- Une potion peut contenir plusieurs ingrédients (potions ou ingrédients de base)
-- Un ingrédient peut être utilisé dans plusieurs potions
+- Une instance d'`AjoutIngredient` contient exactement un `Ingredient` (relation 1 à 1)
+- Un `Ingredient` peut être utilisé dans plusieurs instances d'`AjoutIngredient` (relation 1 à plusieurs)
+- Une `Potion` peut avoir plusieurs instances d'`AjoutIngredient` (relation 1 à plusieurs)
+- Une instance d'`AjoutIngredient` correspond à exactement une `Potion` (relation 1 à 1)
 
-**Implémentation dans le code :**
-- **Classe `Potion`** : 
-  - Liste `_ingredients` pour stocker les ingrédients (potions ou ingrédients de base) utilisés dans cette potion
-
-**Classe d'association `IngredientRecipe` :**
-- Contient les informations spécifiques à chaque relation potion-ingrédient :
-  - `_quantity` : Quantité nécessaire de l'ingrédient
-  - `_addOrder` : Ordre dans lequel l'ingrédient doit être ajouté
+**Classe `AjoutIngredient` :**
+- Contient les informations spécifiques à l'ajout d'un ingrédient dans une potion :
+  - `quantite` : Quantité nécessaire de l'ingrédient
+  - `ordreAjout` : Ordre dans lequel l'ingrédient doit être ajouté
 
 ## 🔧 Points Techniques Importants
 
 ### **Hiérarchie d'Héritage**
-- `Ingredient` est la classe de base pour tous les types d'ingrédients
-- `Potion` et `BaseIngredient` héritent d'`Ingredient`
+- `Ingredient` est la classe abstraite de base pour tous les types d'ingrédients
+- `Potion` et `RawIngredient` héritent d'`Ingredient`
 - Cette structure permet de traiter de manière uniforme tous les types d'ingrédients
 
-### **Flexibilité des Recettes**
-- Une potion peut contenir comme ingrédients :
-  - Des ingrédients de base (herbes, essences, etc.)
-  - D'autres potions (pour créer des potions plus complexes)
-  - Un mélange des deux
-- Cette flexibilité permet de modéliser des recettes complexes comme dans le jeu
+### **Gestion des Ingrédients dans les Potions**
+- La classe `AjoutIngredient` sert d'intermédiaire entre les potions et les ingrédients
+- Elle permet de spécifier la quantité et l'ordre d'ajout de chaque ingrédient dans une potion
+- Cette approche offre une grande flexibilité dans la création de recettes de potions
 
-### **Gestion des Ingrédients**
-- Chaque potion maintient une liste de ses ingrédients via la classe d'association
-- La relation est unidirectionnelle : une potion connaît ses ingrédients, mais un ingrédient ne sait pas dans quelles potions il est utilisé
-- Cette approche simplifie la gestion des relations tout en permettant de créer des potions complexes
-
-### **Vérification de Création**
-- La méthode `CanBeCreated()` vérifie si tous les ingrédients nécessaires sont disponibles
-- Permet d'éviter les références circulaires (une potion qui nécessiterait elle-même comme ingrédient)
-- Permet de déterminer si une potion peut être créée avec les ingrédients disponibles
+### **Flexibilité du Système**
+- Une potion peut contenir différents types d'ingrédients (bruts ou autres potions)
+- Le système permet de créer des recettes complexes avec des ordres d'ajout spécifiques
+- La structure facilite l'extension du système avec de nouveaux types d'ingrédients
